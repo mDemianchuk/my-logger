@@ -7,6 +7,7 @@ from pathlib import Path
 
 
 class MyLogger(Logger):
+
     def __init__(
             self,
             name: str = "my-logger",
@@ -49,6 +50,7 @@ class MyLogger(Logger):
 
 
 class MyLoggerFormatter(Formatter):
+
     def __init__(self, is_utc: bool):
         super().__init__(
             fmt="%(asctime)s | %(levelname)-8s | %(parent_dir)s | %(filename)s:%(lineno)d | %(message)s",
