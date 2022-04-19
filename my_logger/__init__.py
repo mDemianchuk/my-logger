@@ -15,7 +15,7 @@ class MyLogger(Logger):
             level: int or str = logging.INFO,
     ):
         super().__init__(name, self._get_level(level))
-        self._formatter = MyLoggerFormatter(is_utc)
+        self._formatter = _MyLoggerFormatter(is_utc)
         self._add_default_handler()
 
     @staticmethod
@@ -49,7 +49,7 @@ class MyLogger(Logger):
         self.addHandler(file_handler)
 
 
-class MyLoggerFormatter(Formatter):
+class _MyLoggerFormatter(Formatter):
 
     def __init__(self, is_utc: bool):
         super().__init__(
